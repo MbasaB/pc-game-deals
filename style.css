@@ -1,0 +1,178 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f6f7f8;
+  color: #202b35;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.page {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 55px 24px;
+}
+
+.heading {
+  margin-bottom: 34px;
+}
+
+.eyebrow {
+  color: #137650;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+h1 {
+  font-size: clamp(28px, 5vw, 42px);
+  margin: 8px 0;
+}
+
+.heading > p:last-child {
+  color: #66727b;
+}
+
+.controls {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 20px;
+  background: white;
+  padding: 20px;
+  border: 1px solid #e2e6e9;
+  border-radius: 12px;
+}
+
+.search-box {
+  flex: 1;
+  min-width: 230px;
+}
+
+.search-box label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 9px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd4d9;
+  border-radius: 7px;
+  font-size: 15px;
+}
+
+.search-box input:focus {
+  outline: 2px solid #6cc7a0;
+  outline-offset: 1px;
+}
+
+.sale-filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.sale-filter input {
+  accent-color: #137650;
+}
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 5px 20px;
+  margin: 20px 0 14px;
+  color: #66727b;
+  font-size: 14px;
+}
+
+.summary p {
+  margin: 0;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+}
+
+.game-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 190px;
+  padding: 20px;
+  background: white;
+  border: 1px solid #e2e6e9;
+  border-radius: 12px;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.store {
+  font-size: 13px;
+  color: #66727b;
+}
+
+.sale-tag {
+  background: #e2f6eb;
+  color: #117048;
+  padding: 6px 8px;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.game-card h2 {
+  margin: 28px 0 20px;
+  font-size: 21px;
+}
+
+.prices {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: auto;
+}
+
+.prices strong {
+  font-size: 21px;
+}
+
+.prices del {
+  color: #879198;
+  font-size: 14px;
+}
+
+.discount {
+  color: #117048;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.empty-message {
+  grid-column: 1 / -1;
+  padding: 25px;
+  background: white;
+  border: 1px solid #e2e6e9;
+  border-radius: 12px;
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: 32px 16px;
+  }
+}
