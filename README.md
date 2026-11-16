@@ -1,45 +1,59 @@
 # PC Game Deals
 
-A small website for the PC Game Deals entry assessment. It uses plain HTML, CSS and JavaScript, so it doesn't need any extra packages or framework.
+A simple website that shows PC game prices and highlights deals. Built with HTML, CSS and JavaScript.
 
-## How to run it
+## Features
 
-1. Download or clone the project.
-2. Open `index.html` in a web browser.
-3. Search for a title or tick "Show on-sale games only" to filter the cards.
+- Displays eight games with their prices and stores.
+- Shows an **ON SALE** label when the current price is lower than the normal price.
+- Calculates the discount percentage for games on sale.
+- Lets you search game titles without worrying about capital letters.
+- Includes a checkbox to show only discounted games.
+- Shows how many games match the filters and the cheapest game in the results.
+- Adjusts the card layout for smaller screens.
 
-No installation or API key is needed.
+## Running the project
 
-## What's included
+1. Download the repository as a ZIP or clone it.
+2. Open `index.html` in a browser.
 
-- **Part A (`logic.js`)**: `getOnSaleGames`, `getDiscountPercentage`, `getCheapestGame`, and `searchGames`.
-- **Part B (`index.html`, `script.js`, `style.css`)**: lists the game deals, their sale prices, and an ON SALE badge only when a game has a discount.
-- **Part C**: live search as you type, a filter for on-sale games, a result count, and basic responsive styling. The data is local; CheapShark API integration was not attempted.
-- **Part D**: enter a personal write-up in the application form about your process, choices, obstacles, resources, time spent and assumptions.
+That's it. No installation or extra packages are needed.
 
-## Assumptions
+## Project files
 
-- A game is on sale only when `salePrice < normalPrice`.
-- The cheapest game is determined by the price you would pay now (`salePrice`).
-- Discounts are rounded to the nearest whole percent.
-- Prices are treated as rand because that is what the brief specifies.
-- Searches are case-insensitive and match part of a title.
+| File | Purpose |
+| --- | --- |
+| `index.html` | Structure of the webpage |
+| `style.css` | Layout and styling |
+| `games.js` | Game data used by the website |
+| `logic.js` | Functions for filtering, searching and calculating deals |
+| `script.js` | Displays the cards and handles the search and checkbox |
 
-## Files
+## How the logic works
 
-- `games.js` — the supplied game data.
-- `logic.js` — functions for working with the data (Part A).
-- `script.js` — creates the game cards and handles the filters.
-- `style.css` — page styling.
-- `index.html` — the web page.
+The functions in `logic.js` handle the main calculations:
+
+- `getOnSaleGames()` filters games whose sale price is lower than their normal price.
+- `getDiscountPercentage()` works out the percentage saved and rounds it to a whole number.
+- `getCheapestGame()` finds the game with the lowest current price.
+- `searchGames()` looks for a title match, ignoring letter case.
+
+The webpage uses these functions to update the results when the search text or checkbox changes.
 
 ## Example checks
 
-Open the browser developer console after opening `index.html`:
+Open the browser console while viewing `index.html` and try:
 
 ```javascript
-getOnSaleGames(games).length              // 6
-getDiscountPercentage(games[0])           // 50
-getCheapestGame(games).title               // "Portal 2"
-searchGames(games, "HOLLOW")[0].title     // "Hollow Knight"
+getOnSaleGames(games).length             // 6
+getDiscountPercentage(games[0])          // 50
+getCheapestGame(games).title             // "Portal 2"
+searchGames(games, "hollow")[0].title    // "Hollow Knight"
 ```
+
+## Notes
+
+- Prices are shown in rand, using the values provided in the assessment.
+- A game is on sale only if its sale price is **less than** its normal price.
+- The cheapest game is based on the price currently displayed, not the original price.
+- The website uses a fixed list of games. It does not fetch live prices from an API.
