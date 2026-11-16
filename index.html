@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PC Game Deals</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="games.js" defer></script>
+  <script src="logic.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <header class="heading">
+      <p class="eyebrow">PC GAME DEALS</p>
+      <h1>Find your next game for less</h1>
+      <p>Browse a few PC games and see which ones are discounted.</p>
+    </header>
+
+    <section class="controls" aria-label="Filter games">
+      <div class="search-box">
+        <label for="search">Search games</label>
+        <input id="search" type="search" placeholder="e.g. Hollow Knight" autocomplete="off">
+      </div>
+
+      <label class="sale-filter" for="sale-only">
+        <input id="sale-only" type="checkbox">
+        Show on-sale games only
+      </label>
+    </section>
+
+    <div class="summary">
+      <p id="result-count" aria-live="polite"></p>
+      <p id="cheapest-game"></p>
+    </div>
+
+    <section id="games" class="game-grid" aria-label="Game deals"></section>
+  </main>
+</body>
+</html>
